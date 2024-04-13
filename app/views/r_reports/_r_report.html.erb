@@ -1,0 +1,17 @@
+<div id="<%= dom_id r_report %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Title:</strong>
+    <%= r_report.title %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Content:</strong>
+    <%= r_report.content %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this r report", r_report, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to "Edit this r report", edit_r_report_path(r_report), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>

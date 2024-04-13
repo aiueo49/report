@@ -1,0 +1,2 @@
+class RReport < ApplicationRecord
+end
