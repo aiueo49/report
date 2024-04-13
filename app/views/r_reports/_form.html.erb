@@ -11,9 +11,13 @@
     </div>
   <% end %>
 
+  <% ['東京都', '大阪府', '京都府'].each do |prefecture| %>
+    <%= check_box_tag 'prefectures[]', prefecture, false, class: "checkbox" %> <%= prefecture %><br>
+  <% end %>
+
   <div class="my-5">
     <%= form.label :title %>
-    <%= form.text_field :title, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= form.collection_check_boxes :title, ['東京', '大阪', '京都'], :itself, :itself, { }, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
   <div class="my-5">
@@ -28,7 +32,7 @@
 
   <div class="my-5">
     <%= form.label :credo %>
-    <%= form.select :credo, ["ヤクルト", "ああああああ", "毎週提出"], {}, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= form.select :credo, ["ヤクルト", "ああああああ", "毎週提出"], {}, { class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" } %>
   </div>
 
   <div class="inline">
