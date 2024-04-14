@@ -12,21 +12,8 @@
   <% end %>
 
   <div class="my-5">
-    <%= form.label :company %>
-    <%= form.select :campany, ["apple", "google", "meta"], class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full sample-select2", multiple: true %>
-
-  <% ['東京都', '大阪府', '京都府'].each do |prefecture| %>
-    <%= check_box_tag 'prefectures[]', prefecture, false, class: "checkbox" %> <%= prefecture %><br>
-  <% end %>
-
-  <div class="my-5">
-    <%= form.label :title %>
-    <%= form.collection_check_boxes :title, ['東京', '大阪', '京都'], :itself, :itself, { }, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
-
-  <div class="my-5">
     <%= form.label :content %>
-    <%= form.text_field :content, rows: 4, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= form.select :content, ["", "rails1", "rails2", "rails3"], {}, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
   <div class="my-5">
