@@ -9,6 +9,14 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <script>
+      $(document).ready(function() {
+        $(".sample_select").select2({
+          width: 600,
+          multiple: true
+        });
+      });
+    </script>
   </head>
 
   <body>

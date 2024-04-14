@@ -70,3 +70,5 @@ group :test do
 end
 
 gem "select2-rails", "~> 4.0"
+
+gem "jquery-rails", "~> 4.6"

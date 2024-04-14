@@ -11,6 +11,10 @@
     </div>
   <% end %>
 
+  <div class="my-5">
+    <%= form.label :company %>
+    <%= form.select :campany, ["apple", "google", "meta"], class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full sample-select2", multiple: true %>
+
   <% ['東京都', '大阪府', '京都府'].each do |prefecture| %>
     <%= check_box_tag 'prefectures[]', prefecture, false, class: "checkbox" %> <%= prefecture %><br>
   <% end %>
