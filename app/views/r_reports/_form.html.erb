@@ -13,8 +13,24 @@
 
   <div class="my-5">
     <%= form.label :content %>
-    <%= form.select :content, ["", "rails1", "rails2", "rails3"], {}, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= form.select :content, ["", "rails1", "rails2", "rails3", "custom"], { include_blank: "Select or Type" }, { class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", id: "content-select" } %>
+    <%= form.text_field :custom_content, { class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", placeholder: "Or Type Here", id: "custom-content-field", style: "display: none;" } %>
   </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const selectField = document.getElementById('content-select');
+      const customField = document.getElementById('custom-content-field');
+
+      selectField.addEventListener('change', function() {
+        if (selectField.value === 'custom') {
+          customField.style.display = 'block';
+        } else {
+          customField.style.display = 'none';
+        }
+      });
+    });
+  </script>
 
   <div class="my-5">
     <%= form.label :time %>
